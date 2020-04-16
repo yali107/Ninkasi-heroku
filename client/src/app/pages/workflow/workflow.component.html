@@ -1,0 +1,29 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Workflow</h2>
+                <h3 class="section-subheading text-muted">The entire project last for 3 weeks.</h3>
+            </div>
+        </div>
+        <br>
+        <mgl-timeline>
+            <mgl-timeline-entry *ngFor="let entry of entries; let i = index">
+                <mgl-timeline-entry-header (click)="onHeaderClick($event)">
+                    <div class="container w-50">
+                        <img class="rounded-circle img-responsive" src="{{entry.img}}" alt="">
+                    </div>
+                </mgl-timeline-entry-header>
+                <mgl-timeline-entry-content>{{entry.content}}</mgl-timeline-entry-content>
+                <mgl-timeline-entry-dot class="primary" [size]="30"
+                    style="text-align: center; background-color: rgb(245, 248, 78); color: darkblue"
+                    (click)="onDotClick($event)"></mgl-timeline-entry-dot>
+                <mgl-timeline-entry-side>
+                    <div style="align-content: center">
+                        <h4>{{entry.header}}</h4>
+                    </div>
+                </mgl-timeline-entry-side>
+            </mgl-timeline-entry>
+        </mgl-timeline>
+    </div>
+</section>

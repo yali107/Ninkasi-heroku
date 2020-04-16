@@ -1,0 +1,81 @@
+<!-- <input type="text" (input)="onGetBeerInput($event)">
+<button (click)="onGetSimilarBeers()">get beer rec</button>
+<div *ngIf="similarBeers.length>0">
+    <ul *ngFor="let beer of similarBeers">
+        <div>{{beer}}</div>
+    </ul>
+</div>
+<button (click)="onGetBeerlist()">get beerlist</button>
+
+<button (click)="onGetBeerKeywords()">get beer kws</button>
+<div *ngIf="beerKeywords.length>0">
+    <ul *ngFor="let kw of beerKeywords">
+        <div>{{kw}}</div>
+    </ul>
+</div> -->
+
+<section id="content-based" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Find beers that are similar to your favorite!</h2>
+                <h3 class="section-subheading text-muted">Content-based Recommendation<br><br>
+                    Note: only top-25 beers for each state are included.</h3>
+            </div>
+            <div class="col-lg-12">
+                <form [formGroup]="beerForm" (ngSubmit)="onSubmit()">
+                    <div class="col-lg-12 text-center">
+                        <h4> Enter your favorite beer:</h4>
+                    </div>
+                    <br>
+                    <div class="row text-center">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="enter a beer name"
+                                formControlName="beer_selected" [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete">
+                                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <br>
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <br>
+                    <div *ngIf="areKeywordsReady && areBeerRecsReady">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <b>Keywords of this beer:</b>
+                                </div>
+                                <div class="card-body">
+                                    <p>{{ beerKeywords }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <b>10 Beers Similar to Your Favoriate:</b>
+                                </div>
+                                <div class="card-body">
+                                    <app-info-table [beerData]="beerRecs"></app-info-table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 text-center beer-loader-container" *ngIf="isModelLoading">
+                        <app-model-loader></app-model-loader>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</section>

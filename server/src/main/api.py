@@ -1,5 +1,6 @@
 from typing import List, Dict
 from os import sys, path
+import json
 
 # sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
@@ -41,7 +42,9 @@ DB = MONGO_CLIENT['ninkasi']
 class BeerList(Resource):
     @api.doc('list of beers')
     def get(self):
-        beer_list: List = retrieve_bin_doc(DB, 'cbBeerNames', 'beer_name')
+        # beer_list: List = retrieve_bin_doc
+        with open('/usr/src/app/src/main/mllib/data/cb/beer_list.json', 'r') as f:
+            beer_list = json.load(f)
         response = jsonify(beer_list)
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
@@ -115,4 +118,4 @@ class CollabFilterBeerRec(Resource):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5200)
+    app.run(debug=False, host='0.0.0.0', port=8866)

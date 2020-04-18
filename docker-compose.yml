@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  server:
+    image: server-flask
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: "server-app"
+    volumes:
+      - ./server:/app
+    ports:
+      - "8866:8866"
+    env_file:
+      - ./.env.dev
+    command: gunicorn --bind 0.0.0.0:8866 --chdir /usr/src/app/src/main api:app
+  client:
+    image: client-angular
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: "client-app"
+    volumes:
+      - ./client/src:/client
+    ports:
+      - "4200:4200"

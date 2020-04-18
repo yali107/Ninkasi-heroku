@@ -7,7 +7,7 @@ import { UserSelection, UserChoice } from 'src/app/ninkasi/collab-filtering-rec/
   providedIn: 'root'
 })
 export class ModelsService {
-  apiPath = 'http://localhost:5200/';
+  apiPath = 'http://localhost:8866/';
 
   beerlistUri: string = this.apiPath + 'api/beerlist';
   cbBeerRecUri: string = this.apiPath + 'api/cbbeerrec';

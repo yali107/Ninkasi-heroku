@@ -1,16 +1,16 @@
 # idea profiles
-*/.idea/
+**/.idea/
 
 # Byte-compiled / optimized / DLL files
-*/__pycache__/
+**/__pycache__/
 */*.py[cod]
 */*$py.class
 
 # Distribution / packaging
 */.Python
-*/build/
+**/build/
 */develop-eggs/
-*/dist/
+**/dist/
 */downloads/
 */eggs/
 */.eggs/
@@ -65,7 +65,7 @@
 */.env
 */.venv
 */env/
-*/venv/
+**/venv/
 */ENV/
 */env.bak/
 */venv.bak/
@@ -76,7 +76,7 @@
 # mypy
 */.mypy_cache/
 
-*/.vscode/
+**/.vscode/
 */*/*/*/data/
 */firebase-config/
 
@@ -85,7 +85,7 @@
 */out-tsc/
 
 # dependencies
-*/node_modules/
+**/node_modules/
 
 # profiling files
 */chrome-profiler-events*.json

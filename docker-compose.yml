@@ -5,7 +5,7 @@ services:
     image: server-flask
     build:
       context: ./server
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.server
     container_name: "server-app"
     volumes:
       - ./server:/app
@@ -14,13 +14,13 @@ services:
     env_file:
       - ./.env.dev
     command: gunicorn --bind 0.0.0.0:8866 --chdir /usr/src/app/src/main api:app
-  client:
-    image: client-angular
+  web:
+    image: web-angular
     build:
-      context: ./client
-      dockerfile: Dockerfile
-    container_name: "client-app"
+      context: ./web
+      dockerfile: Dockerfile.web
+    container_name: "web-app"
     volumes:
-      - ./client/src:/client
+      - ./web/src:/web
     ports:
       - "4200:4200"

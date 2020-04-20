@@ -35,7 +35,6 @@ export class ContentBasedRecComponent implements OnInit {
     this.modelsService.getBeerList().subscribe(
       data => {
         this.beerList = data;
-        console.log(this.beerList)
         this.filteredOptions = this.beerForm.get('beer_selected').valueChanges.pipe(
           startWith(''),
           map(value => this._filter(value))
@@ -51,8 +50,6 @@ export class ContentBasedRecComponent implements OnInit {
   }
 
   private _filter(value): string[] {
-    // debugger;
-    console.log('value', value)
     const filterValue = value.toLowerCase();
 
     return this.beerList.filter(option => option.toLowerCase().includes(filterValue));
@@ -80,7 +77,6 @@ export class ContentBasedRecComponent implements OnInit {
       .subscribe(
         data => {
           this.beerRecs = data['rec_beers'];
-          console.log(this.beerRecs);
           this.areBeerRecsReady = true;
           this.isModelLoading = false;
         }

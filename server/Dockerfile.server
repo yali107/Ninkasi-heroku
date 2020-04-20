@@ -1,4 +1,4 @@
-FROM python:3.7-buster
+FROM python:3.7-slim-buster
 
 WORKDIR /usr/src/app
 
@@ -13,4 +13,9 @@ COPY . /usr/src/app/
 
 EXPOSE 8866
 
-CMD python /usr/src/app/src/main/api.py
+CMD ["gunicorn", "-w", "3", "-b", ":8866", "-t", "360", "--chdir", "/usr/src/app/src/main", "--reload", "api:app"]
+
+
+
+FROM nginx:1.17.10
+COPY nginx.conf /etc/nginx/nginx.conf

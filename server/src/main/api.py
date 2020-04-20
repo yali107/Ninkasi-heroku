@@ -42,9 +42,9 @@ DB = MONGO_CLIENT['ninkasi']
 class BeerList(Resource):
     @api.doc('list of beers')
     def get(self):
-        # beer_list: List = retrieve_bin_doc
-        with open('/usr/src/app/src/main/mllib/data/cb/beer_list.json', 'r') as f:
-            beer_list = json.load(f)
+        beer_list: List = retrieve_bin_doc(DB, 'cbBeerNames', 'beer_name')
+        # with open('/usr/src/app/src/main/mllib/data/cb/beer_list.json', 'r') as f:
+        #     beer_list = json.load(f)
         response = jsonify(beer_list)
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response

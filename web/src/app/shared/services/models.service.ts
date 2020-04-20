@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { UserSelection, UserChoice } from 'src/app/ninkasi/collab-filtering-rec/collab-filtering-rec.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ModelsService {
-  apiPath = 'http://localhost:8866/';
+  // apiPath = 'http://localhost:8866/'; // dev
+  apiPath = 'https://ninkasi-rest-api.herokuapp.com/'; // prod
 
   beerlistUri: string = this.apiPath + 'api/beerlist';
   cbBeerRecUri: string = this.apiPath + 'api/cbbeerrec';

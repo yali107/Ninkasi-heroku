@@ -48,7 +48,6 @@ export class CollabFilteringRecComponent implements OnInit, OnDestroy {
   }
 
   private _filter(value): string[] {
-    console.log('value', value)
     const filterValue = value.toLowerCase();
 
     return this.beerList.filter(option => option.toLowerCase().includes(filterValue));

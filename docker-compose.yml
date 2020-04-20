@@ -1,19 +1,19 @@
 version: '3'
 
 services:
-  server:
-    image: server-flask
-    build:
-      context: ./server
-      dockerfile: Dockerfile.server
-    container_name: "server-app"
-    volumes:
-      - ./server:/app
-    ports:
-      - "8866:8866"
-    env_file:
-      - ./.env.dev
-    command: gunicorn --bind 0.0.0.0:8866 --chdir /usr/src/app/src/main api:app
+#  server:
+#    image: server-flask
+#    build:
+#      context: ./server
+#      dockerfile: Dockerfile.server
+#    container_name: "server-app"
+#    volumes:
+#      - ./server:/app
+#    ports:
+#      - "8866:8866"
+#    env_file:
+#      - ./.env.dev
+#    command: gunicorn --bind 0.0.0.0:8866 --chdir /usr/src/app/src/main api:app
   web:
     image: web-angular
     build:

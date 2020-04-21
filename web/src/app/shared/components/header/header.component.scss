@@ -1,3 +1,17 @@
 .bg-black {
-    background-color: black !important;
+  background-color: black !important;
+}
+
+.navbar-toggle {
+  border-color: #c57ed3;
+
+  &:hover,
+  &:focus {
+    background-color: #490d40;
+  }
+
+  .icon-bar {
+    color: #c57ed3;
+    background-color: #c57ed3;
+  }
 }

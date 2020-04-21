@@ -1,8 +1,19 @@
-// img {
-//     height: 50vh;
-//     width: 100%;
-// }
+img {
+    height: 70vh;
+    width: 100%;
+}
+
+.container-fluid {
+    width: 100%;
+    overflow:hidden;
+    display:block;
+    height: 80vh;
+}
 
 .carousel-bg {
     background-color: black;
+}
+
+#vid{
+    margin-top: -50px;
 }

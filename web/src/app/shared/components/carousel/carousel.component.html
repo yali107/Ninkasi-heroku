@@ -1,5 +1,5 @@
-<ngb-carousel *ngIf="images" class="carousel-bg">
-    <ng-template ngbSlide>
+<ngb-carousel *ngIf="images" class="carousel-bg" [showNavigationArrows]="false">
+    <!-- <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
             <img src="../../../../assets/background/toast-small.jpg" alt="toast" class="w-100">
         </div>
@@ -7,17 +7,21 @@
             <h3>First slide label</h3>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </div>
-    </ng-template>
+    </ng-template> -->
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-            <img src="../../../../assets/background/beer_and_chips.jpg" alt="beer and chips" class="w-100">
+            <div class="container-fluid" id="vid">
+                <video src="../../assets/background/network_video_background.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>   
+            </div>
+            Free Broll provided by <a target="_blank" href="http://videezy.com">Videezy</a>
+            <!-- <img src="../../../../assets/background/beer_and_chips.jpg" alt="beer and chips" class="w-100"> -->
         </div>
         <div class="carousel-caption">
             <h3>Second slide label</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
     </ng-template>
-    <ng-template ngbSlide>
+    <!-- <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
             <img src="../../../../assets/background/beer_zoom_in.jpg" alt="beer zoom in" class="w-100">
         </div>
@@ -25,5 +29,5 @@
             <h3>Third slide label</h3>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
         </div>
-    </ng-template>
+    </ng-template> -->
 </ngb-carousel>

@@ -8,15 +8,16 @@ import { TeamComponent } from './pages/team/team.component';
 import { ContentBasedRecComponent } from './ninkasi/content-based-rec/content-based-rec.component';
 import { CollabFilteringRecComponent } from './ninkasi/collab-filtering-rec/collab-filtering-rec.component';
 import { NinkasiComponent } from './ninkasi/ninkasi.component';
+import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'intro', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'workflow', component: HomeComponent },
-  // { path: 'team', component: TeamComponent },
+  { path: 'contact', component: TeamComponent },
   { path: 'ninkasi', loadChildren: () => import('./ninkasi/ninkasi.module').then(m => m.NinkasiModule) },
-  // { path: '**', redirectTo: '/home' }
+  { path: '**', redirectTo: '/home' }
 
 ];
 

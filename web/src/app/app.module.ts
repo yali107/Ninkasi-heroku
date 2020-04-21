@@ -25,6 +25,7 @@ import { CarouselComponent } from './shared/components/carousel/carousel.compone
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { InfoTableComponent } from './shared/components/info-table/info-table.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { InfoTableComponent } from './shared/components/info-table/info-table.co
     CarouselComponent,
     HomeComponent,
     FooterComponent,
+    AboutComponent,
     // InfoTableComponent,
     // NinkasiComponent,
     // ContentBasedRecComponent,
@@ -52,8 +54,8 @@ import { InfoTableComponent } from './shared/components/info-table/info-table.co
     BrowserAnimationsModule,
     MglTimelineModule,
 
-    NgxPageScrollCoreModule,
-    NgxPageScrollModule,
+    // NgxPageScrollCoreModule,
+    // NgxPageScrollModule,
     // AgGridModule.withComponents([]),
 
     NinkasiModule

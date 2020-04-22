@@ -4,16 +4,28 @@ img {
 }
 
 .container-fluid {
-    width: 100%;
+    width: 100vw;
     overflow:hidden;
     display:block;
-    height: 80vh;
+    height: 800px;
+    margin: 0px;
 }
 
 .carousel-bg {
     background-color: black;
 }
 
-#vid{
-    margin-top: -50px;
+// .carousel-indicators {
+//     position: absolute;
+//     bottom: 10px !important;
+// }
+
+#vid1 {
+    margin-top: -80px;
+    margin-left: -20px;
+}
+
+#vid2 {
+    margin-top: -80px;
+    margin-left: -10px;
 }

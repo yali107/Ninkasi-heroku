@@ -9,25 +9,32 @@
         </div>
     </ng-template> -->
     <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-            <div class="container-fluid" id="vid">
-                <video src="../../assets/background/network_video_background.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>   
+        <div class="picsum-img-wrapper">text
+            <div class="container-fluid" id="vid1">
+                <video src="../../assets/background/text_video_background.mp4" autoplay="autoplay" muted="muted"
+                    loop="loop"></video>
             </div>
-            Free Broll provided by <a target="_blank" href="http://videezy.com">Videezy</a>
-            <!-- <img src="../../../../assets/background/beer_and_chips.jpg" alt="beer and chips" class="w-100"> -->
+            <p style="font-size: 10px; color: azure">Free Broll provided by <a target="_blank"
+                    href="http://videezy.com">Videezy</a></p>
         </div>
         <div class="carousel-caption">
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3><a style="color: #fed136;" routerLink="/ninkasi/cbrec">Content-Based Algorithm</a></h3>
+            <p style="color: #fed136">Recommender system built from 280,000 customer reviews.</p>
         </div>
     </ng-template>
-    <!-- <ng-template ngbSlide>
+    <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-            <img src="../../../../assets/background/beer_zoom_in.jpg" alt="beer zoom in" class="w-100">
+            <div class="container-fluid" id="vid2">
+                <video src="../../assets/background/network_video_background.mp4" autoplay="autoplay" muted="muted"
+                    loop="loop"></video>
+            </div>
+            <p style="font-size: 10px; color: azure">Free Broll provided by <a target="_blank"
+                    href="http://videezy.com">Videezy</a></p>
         </div>
         <div class="carousel-caption">
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <h3><a style="color: #fed136;" routerLink="/ninkasi/cfrec">Collaborative Filtering Algorithm</a></h3>
+            <p style="color: #fed136">Recommender system built from 17,000 customer ratings.</p>
         </div>
-    </ng-template> -->
+    </ng-template>
+
 </ngb-carousel>

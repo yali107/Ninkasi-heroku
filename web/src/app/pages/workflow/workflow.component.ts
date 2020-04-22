@@ -33,8 +33,8 @@ export class WorkflowComponent implements OnInit {
         'deep learning technique-Restricted Boltzmann Machine (RBM). The results from two methods are combined to reconstruct user-item matrix.'
     }, 
     {
-      header: 'Ninkasi',
-      img: 'path'
+      header: 'V. Ninkasi App',
+      img: '../../assets/about/5.jpg'
     }
   ]
 

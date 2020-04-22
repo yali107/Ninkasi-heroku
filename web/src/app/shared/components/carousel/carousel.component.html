@@ -11,8 +11,9 @@
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">text
             <div class="container-fluid" id="vid1">
-                <video src="../../assets/background/text_video_background.mp4" autoplay="autoplay" muted="muted"
-                    loop="loop"></video>
+                <video autoplay="autoplay" [muted]="true" loop="loop">
+                    <source src="../../assets/background/text_video_background.mp4" type="video/mp4">
+                </video>
             </div>
             <p style="font-size: 10px; color: #ffffff80">Free Broll provided by <a target="_blank"
                     href="http://videezy.com">Videezy</a></p>
@@ -25,8 +26,9 @@
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
             <div class="container-fluid" id="vid2">
-                <video src="../../assets/background/network_video_background.mp4" autoplay="autoplay" muted="muted"
-                    loop="loop"></video>
+                <video  autoplay="autoplay" [muted]="true" loop="loop">
+                    <source src="../../assets/background/network_video_background.mp4" type="video/mp4">
+                </video>
             </div>
             <p style="font-size: 10px; color: #ffffff80">Free Broll provided by <a target="_blank"
                     href="http://videezy.com">Videezy</a></p>

@@ -1,15 +1,21 @@
 <ngb-carousel *ngIf="images" class="carousel-bg" [showNavigationArrows]="false">
-    <!-- <ng-template ngbSlide>
+    <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-            <img src="../../../../assets/background/toast-small.jpg" alt="toast" class="w-100">
+            <div class="container-fluid w-100" id="vid0">
+                <video autoplay="autoplay" width="1920" height="1080" [muted]="true" loop="loop">
+                    <source src="../../assets/background/beer_bubble_video_background.mp4" type="video/mp4">
+                </video>
+            </div>
+            <p style="font-size: 10px; color: #ffffff80">Free Broll provided by <a target="_blank"
+                href="https://www.videvo.net">Videvo</a></p>
         </div>
         <div class="carousel-caption">
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3><a style="color: #fed136;" routerLink="/ninkasi/cbrec">Ninkasi Beer Recommender</a></h3>
+            <p style="color: #fed136">Two recommender systems built by two different approaches.</p>
         </div>
-    </ng-template> -->
+    </ng-template>
     <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">text
+        <div class="picsum-img-wrapper">
             <div class="container-fluid" id="vid1">
                 <video autoplay="autoplay" [muted]="true" loop="loop">
                     <source src="../../assets/background/text_video_background.mp4" type="video/mp4">

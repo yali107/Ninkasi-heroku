@@ -11,6 +11,14 @@ img {
     margin: 0px;
 }
 
+.carousel-caption {
+    bottom: 70px;
+}
+
+.carousel-indicators li {
+    bottom: 35px !important;
+}
+
 .carousel-bg {
     background-color: black;
 }
@@ -20,12 +28,15 @@ img {
 //     bottom: 10px !important;
 // }
 
+// #vid0 {
+// }
+
 #vid1 {
-    margin-top: -80px;
+    // margin-top: -10px;
     margin-left: -20px;
 }
 
 #vid2 {
-    margin-top: -80px;
+    // margin-top: -40px;
     margin-left: -10px;
 }

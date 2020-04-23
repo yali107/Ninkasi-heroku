@@ -9,14 +9,14 @@
             <div class="col-lg-12">
                 <form [formGroup]="beerForm" (ngSubmit)="onSubmit()">
                     <div class="col-lg-12 text-center">
-                        <h4> Enter your favorite beer:</h4>
+                        <h4 style="margin-top: 30px; margin-bottom: 40px;"> Enter your favorite beer:</h4>
                     </div>
                     <br>
                     <div class="row text-center">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="enter a beer name"
-                                formControlName="beer_selected" [matAutocomplete]="auto">
+                            <input type="text" class="form-control" placeholder="Enter a beer name"
+                                formControlName="beer_selected" [matAutocomplete]="auto" style="margin-bottom: 30px;">
                             <mat-autocomplete #auto="matAutocomplete">
                                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                                     {{option}}

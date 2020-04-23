@@ -14,7 +14,13 @@
                         <img class="rounded-circle img-responsive" src="{{entry.img}}" alt="">
                     </div>
                 </mgl-timeline-entry-header>
-                <mgl-timeline-entry-content>{{entry.content}}</mgl-timeline-entry-content>
+                <mgl-timeline-entry-content *ngIf="entry.link">
+                    Try out the 
+                    <a routerLink="/ninkasi/cbrec">{{entry.content[0]}}</a> or the 
+                    <a routerLink="/ninkasi/cfrec">{{entry.content[1]}}</a>
+                </mgl-timeline-entry-content>
+                
+                <mgl-timeline-entry-content *ngIf="!entry.link">{{entry.content}}</mgl-timeline-entry-content>
                 <mgl-timeline-entry-dot class="primary" [size]="30"
                     style="text-align: center; background-color: rgb(245, 248, 78); color: darkblue"
                     (click)="onDotClick($event)"></mgl-timeline-entry-dot>

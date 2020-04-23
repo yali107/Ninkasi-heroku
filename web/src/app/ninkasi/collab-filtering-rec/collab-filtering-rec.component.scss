@@ -1,10 +1,14 @@
-.section-bg-color {
-	background: #eee;
+.cfrec-container {
+	background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.4)), url('../../../assets/background/beerrating.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	// opacity: 0.5;
 }
 
-// .beer-loader-container {
-//     position: relative;
-// }
+.cfrec-container .section-heading {
+	margin-top: 60px;
+	margin-bottom: 80px;
+}
 
 
 

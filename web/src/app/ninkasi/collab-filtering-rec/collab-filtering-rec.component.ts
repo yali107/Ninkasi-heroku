@@ -18,6 +18,8 @@ export class CollabFilteringRecComponent implements OnInit, OnDestroy {
   beerRecs;
   tableReady: boolean = false;
   isModelLoading: boolean = false;
+  afterSubmit: boolean = false;
+  isSubmitCorrect: boolean = false;
 
   userSelections: FormArray;
   initPrefSub: Subscription;
@@ -54,7 +56,7 @@ export class CollabFilteringRecComponent implements OnInit, OnDestroy {
   }
 
   private initForm() {
-    this.userSelections = new FormArray([], this.minPrefsValidator(2));
+    this.userSelections = new FormArray([]);
 
     for (let i = 0; i < 2; i++) {
       this.addPrefsToArray();
@@ -79,14 +81,14 @@ export class CollabFilteringRecComponent implements OnInit, OnDestroy {
     }
   }
 
-  public minPrefsValidator(min: number): ValidatorFn {
-    return (c: FormArray): {[key: string]: any} => {
-      if ((c.controls.filter(control => control.status == 'VALID')).length >= min) {
-        return null;
-      }
-      return { 'minPrefsValidator': {valid: false} };
-    }
-  }
+  // public minPrefsValidator(min: number): ValidatorFn {
+  //   return (c: FormArray): { [key: string]: any } => {
+  //     if ((c.controls.filter(control => control.status == 'VALID')).length >= min) {
+  //       return null;
+  //     }
+  //     return { 'minPrefsValidator': { valid: false } };
+  //   }
+  // }
 
   ngOnDestroy() {
     if (this.userSelections.length > 2) {
@@ -109,9 +111,19 @@ export class CollabFilteringRecComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    this.isModelLoading = true;
-    this.tableReady = false;
-    this.getBeerRec(this.preferenceForm.value);
+    // console.log(this.preferenceForm.value)
+    // console.log(this.preferenceForm.value['userSelections'].length)
+    const inputLength = this.preferenceForm.value['userSelections'].filter( el => el.beer_name != null).length;
+    console.log(inputLength)
+    // this.afterSubmit = true;
+    if (this.afterSubmit && (inputLength < 2 || inputLength > 10)) {
+      this.isSubmitCorrect = false;
+    } else {
+      this.isSubmitCorrect = true;
+      this.isModelLoading = true;
+      this.tableReady = false;
+      this.getBeerRec(this.preferenceForm.value);
+    }
   }
 
   public getBeerRec(userPrefs) {

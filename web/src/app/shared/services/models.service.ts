@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ModelsService {
-  // apiPath = 'http://localhost:8866/'; // dev
-  apiPath = 'https://ninkasi-rest-api.herokuapp.com/'; // prod
+  apiPath = 'http://localhost:8866/'; // dev
+  // apiPath = 'https://ninkasi-rest-api.herokuapp.com/'; // prod
 
   beerlistUri: string = this.apiPath + 'api/beerlist';
   cbBeerRecUri: string = this.apiPath + 'api/cbbeerrec';

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -26,6 +26,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { InfoTableComponent } from './shared/components/info-table/info-table.component';
 import { AboutComponent } from './pages/about/about.component';
+import { AuthInterceptorService } from './shared/auth/auth-interceptor.service';
 
 
 @NgModule({
@@ -61,7 +62,9 @@ import { AboutComponent } from './pages/about/about.component';
     NinkasiModule
 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

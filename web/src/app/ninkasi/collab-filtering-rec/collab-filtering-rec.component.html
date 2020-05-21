@@ -40,11 +40,11 @@
                 </div>
                 <div class="col-lg-12 text-center">
                     <button type="button" class="btn btn-primary m-3" id="displayForm" (click)="onShowMore();">
-                        <!-- {% if cur_inp1 and 6 <= cur_len %}Show Less{% else %}Rate More{% endif %} -->
                         Show More
                     </button>
                     <button type="submit" class="btn btn-primary m-3" [disabled]="!preferenceForm.valid">Submit</button>
                     <br>
+                    <span *ngIf="afterSubmit && !isSubmitCorrect">Wrong number of beers</span>
                 </div>
                 <div class="col-lg-12" *ngIf="tableReady">
                     <div class="card">

@@ -8,7 +8,12 @@
 
             </div>
         </div>
-        <div class="col-xs-12">
+        <div *ngIf="!finishedLoadingApi" class="col-lg-12">
+            <div class="col-lg-12 text-center beer-loader-container">
+                <app-model-loader></app-model-loader>
+            </div>
+        </div>
+        <div class="col-xs-12" *ngIf="finishedLoadingApi">
             <form [formGroup]="preferenceForm" (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="col-lg-12 text-center">

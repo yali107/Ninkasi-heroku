@@ -10,8 +10,6 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MglTimelineModule } from 'angular-mgl-timeline';
 
-import { NgxPageScrollModule } from 'ngx-page-scroll';
-import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { AgGridModule } from 'ag-grid-angular';
 
 import { AppRoutingModule } from './app-routing.module';

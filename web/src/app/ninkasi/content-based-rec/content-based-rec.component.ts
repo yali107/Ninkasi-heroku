@@ -23,6 +23,7 @@ export class ContentBasedRecComponent implements OnInit {
   areKeywordsReady: boolean = false;
   areBeerRecsReady: boolean = false;
   isModelLoading: boolean = false;
+  finishedLoadingApi: boolean = false;
 
   constructor(
     private modelsService: ModelsService
@@ -38,7 +39,8 @@ export class ContentBasedRecComponent implements OnInit {
         this.filteredOptions = this.beerForm.get('beer_selected').valueChanges.pipe(
           startWith(''),
           map(value => this._filter(value))
-        )
+        );
+        this.finishedLoadingApi = true;
       }
     )
 

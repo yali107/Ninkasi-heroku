@@ -20,6 +20,7 @@ export class CollabFilteringRecComponent implements OnInit, OnDestroy {
   isModelLoading: boolean = false;
   afterSubmit: boolean = false;
   isSubmitCorrect: boolean = false;
+  finishedLoadingApi: boolean = false;
 
   userSelections: FormArray;
   initPrefSub: Subscription;
@@ -45,6 +46,7 @@ export class CollabFilteringRecComponent implements OnInit, OnDestroy {
             map(value => this._filter(value))
           )
         ));
+        this.finishedLoadingApi = true;
       }
     )
   }

@@ -1,16 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MglTimelineModule } from 'angular-mgl-timeline';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MglTimelineModule } from 'angular-mgl-timeline';
-
-import { AgGridModule } from 'ag-grid-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +20,6 @@ import { NinkasiModule } from './ninkasi/ninkasi.module';
 import { CarouselComponent } from './shared/components/carousel/carousel.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { InfoTableComponent } from './shared/components/info-table/info-table.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AuthInterceptorService } from './shared/auth/auth-interceptor.service';
 
